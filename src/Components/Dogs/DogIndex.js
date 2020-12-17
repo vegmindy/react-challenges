@@ -11,6 +11,10 @@ class DogIndex extends Component {
         this.getNewImage();
     }
 
+    refreshPage() {
+        window.location.reload(false);
+      }
+
     getNewImage() {
 
         fetch('https://dog.ceo/api/breeds/image/random')
@@ -32,7 +36,8 @@ class DogIndex extends Component {
             <div>
                 <img alt="pruppet" src={this.state.img}></img>
                 <br />
-                <button onClick={this.getNewImage}>New Image</button>
+                {/* <button onClick={this.getNewImage}>New Image</button> */}
+                <button onClick={this.refreshPage}>New Image</button>
             </div>
         )
     }
